@@ -1,13 +1,30 @@
 :root {
-    --red: #f50035;
-    --red-dark: #d8002e;
+    --red: #F11414;
     --ink: #171717;
     --muted: #565656;
     --line: #ececec;
     --white: #fff;
-    --container: 920px;
+    --container: 1436px;
     --radius: 12px;
-    --shadow: 0 10px 30px rgba(20, 20, 20, .12)
+    --shadow: 0 10px 30px rgba(20, 20, 20, .12);
+    --font-heading: "FS PF BeauSans Pro";
+    --font-body: "Sarabun", Arial, sans-serif
+}
+
+@font-face {
+    font-family: 'FS PF BeauSans Pro';
+    src: url('assets/viettel/font/FS PFBeauSansPro-Bbook.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'FS PF BeauSans Pro';
+    src: url('assets/viettel/font/FS PFBeauSansPro-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 * {
@@ -23,10 +40,31 @@ body {
     margin: 0;
     color: var(--ink);
     background: #fff;
-    font-family: Inter, Arial, sans-serif;
+    font-family: var(--font-body);
     font-size: 14px;
     line-height: 1.55;
     overflow-x: hidden
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+
+}
+
+p,
+li,
+a,
+button,
+input,
+textarea,
+select,
+label {
+    font-family: var(--font-body);
 }
 
 img {
@@ -49,70 +87,54 @@ a {
 
 .two-columns {
     display: grid;
-    grid-template-columns: 1fr 1.15fr;
+    grid-template-columns: 1fr 1fr;
     gap: 72px;
     align-items: center
 }
 
-.eyebrow {
-    margin: 0 0 7px;
-    color: var(--red);
-    font-size: 15px;
-    font-weight: 700
-}
-
-.section-copy h2,
-.section-heading h2 {
-    margin: 0 0 20px;
-    font-size: 35px;
-    line-height: 1.23;
-    letter-spacing: -.04em
-}
-
-.section-copy>p:not(.eyebrow) {
-    margin: 0 0 23px;
-    color: var(--muted)
-}
-
-.section-heading {
-    margin-bottom: 45px
-}
-
-.section-heading h2 {
-    text-transform: uppercase
-}
-
-.center {
-    text-align: center
-}
-
 .button {
     display: inline-flex;
-    min-height: 38px;
-    padding: 9px 18px;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     border: 0;
-    border-radius: 10px;
-    color: #fff;
-    background: var(--red);
-    font: 700 12px/1 Inter, sans-serif;
     text-decoration: none;
     cursor: pointer;
-    transition: .2s
+    transition: 0.2s ease;
 }
 
 .button:hover,
 .button:focus-visible {
-    background: var(--red-dark);
-    transform: translateY(-1px)
+    background: var(--red-dark, #d8002e);
+    transform: translateY(-1px);
 }
 
-.button-small {
-    min-height: 34px;
-    padding-inline: 21px;
-    border-radius: 999px
+.button.button-small.header-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 207px;
+    /*[cite: 15] */
+    height: 45px;
+    background-color: #F31414;
+    /*[cite: 2, 3] */
+    border-radius: 40.5px;
+
+    padding: 0;
+    border: 0;
+    color: #FFFFFF;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    font-size: 24px;
+    letter-spacing: -0.04em;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.button.button-small.header-cta:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
 }
 
 .button-icon {
@@ -120,13 +142,14 @@ a {
     align-items: center;
     justify-content: space-between;
     padding: 0 0 0 24px;
-    height: 44px;
-    min-height: 44px;
+    height: 40px;
     border: 0;
     border-radius: 999px;
     background: var(--red);
     color: #fff;
-    font: 700 13px/1 Inter, sans-serif;
+    font-family: var(--font-heading, 'FS PF BeauSans Pro');
+    font-weight: 700;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.03em;
     text-decoration: none;
@@ -136,17 +159,12 @@ a {
     overflow: visible;
 }
 
-.button-icon:hover,
-.button-icon:focus-visible {
-    background: var(--red-dark);
-    transform: translateY(-1px);
-}
 
 .button-icon span,
 .button-icon-svg {
     display: inline-flex;
-    width: 55px;
-    height: 44px;
+    width: 72px;
+    height: 40px;
     align-items: center;
     justify-content: center;
     color: var(--red);
@@ -158,15 +176,9 @@ a {
 
 .button-icon span img,
 .button-icon-svg img {
-    width: 24px;
-    height: 24px;
+    width: 37px;
+    height: 37px;
     object-fit: contain;
-    display: block;
-}
-
-.button-icon span svg {
-    width: 20px;
-    height: 20px;
     display: block;
 }
 
@@ -178,40 +190,53 @@ a {
 }
 
 .site-header {
-    height: 64px;
     position: absolute;
     top: 0;
-    right: 0;
     left: 0;
-    z-index: 20;
-    background: transparent;
+    width: 100%;
+    z-index: 50;
+    padding-top: 20px;
 }
 
 .header-inner {
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 35px
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
 .brand img {
-    width: 200px;
+    height: 48px;
+    /* Giữ tỷ lệ chuẩn, không để 97px để tránh độn thanh header */
+    width: auto;
+    object-fit: contain;
+    display: block;
 }
 
 .main-nav {
     display: flex;
     align-items: center;
-    gap: 43px;
-    margin-left: auto
+    gap: 53px;
+    /* Gap chuẩn 53px từ Auto Layout trong Figma[cite: 7] */
+    white-space: nowrap;
 }
 
 .main-nav a {
-    padding: 20px 0;
-    position: relative;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none
+    text-decoration: none;
+    color: var(--ink);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    line-height: 29px;
+    transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+    color: var(--red);
 }
 
 .main-nav a:after {
@@ -246,42 +271,74 @@ a {
 }
 
 .hero {
-    min-height: 555px;
+    min-height: 610px;
     background: #f7f4ec url("assets/viettel/hero-family.png") center/cover no-repeat;
     overflow: hidden
 }
 
 .hero-inner {
-    min-height: 555px;
+    min-height: 610px;
     position: relative
 }
 
 .hero-copy {
-    width: 420px;
-    padding-top: 190px
+    width: 500px;
+    /* Nới rộng từ 420px lên 500px để chứa đủ chiều rộng 466px của tiêu đề */
+    padding-top: 190px;
 }
 
-.hero h1 {
+#hero-title {
+    font-family: var(--font-heading, 'FS PF BeauSans Pro', sans-serif);
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 1.15;
+    /* Giúp 2 dòng cách nhau khoảng cách vừa phải */
+    letter-spacing: -0.04em;
     margin: 0;
-    color: #ef292f;
-    font-size: 43px;
-    line-height: 1.08;
-    letter-spacing: -.04em;
-    text-align: center;
-    text-transform: uppercase
+    display: flex;
+    flex-direction: column;
+}
+
+/* Dòng 1: MỘT KẾT NỐI */
+#hero-title .line-1 {
+    font-family: 'FS PF BeauSans Pro', sans-serif;
+    font-weight: 700;
+    font-size: 64px;
+    letter-spacing: -0.04em;
+
+    /* Mô phỏng Inner Shadow: đỉnh chữ hơi sẫm lại */
+    background: linear-gradient(180deg, #A80D0D 0%, #F31414 45%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+    /* Drop Shadow từ Figma: X=0, Y=4px, Blur=4px, Color=#FFF5F5 */
+    filter: drop-shadow(0px 4px 4px #FFF5F5);
+    display: block;
+    width: fit-content;
+}
+
+
+#hero-title .line-2 {
+    color: #F11414;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    display: block;
+    margin-left: 27px;
+    /* Tái hiện độ lệch thụt lề giữa left 365px và 392px từ Figma */
 }
 
 .hero-copy p {
-    margin: 22px 0 0 47px;
-    font-size: 14px;
-    line-height: 1.4
+    margin: 22px 0 0 27px;
+    /* Căn chỉnh lề đoạn mô tả thẳng hàng với dòng 2 */
+    font-size: 16px;
+    line-height: 1.4;
 }
 
 .hero-device {
-    width: 210px;
+    width: 270px;
     position: absolute;
     bottom: 35px;
-    left: 44%
+    left: 44%;
 }
 
 .hero-device>img:first-child {
@@ -293,182 +350,230 @@ a {
     margin: -13px auto 0
 }
 
+.hero-dots {
+    width: 141.576px;
+    height: 22px;
+    margin-top: 8px;
+}
+
 .problem {
-    padding-block: 115px
+    padding-block: 145px;
+}
+
+.problem-copy-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0;
+    padding: 0;
+}
+
+.problem-copy-wrap .eyebrow {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-heading, 'FS PF BeauSans Pro', sans-serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: #F31414;
+    line-height: normal;
+    text-align: left;
+}
+
+.problem-copy-wrap #problem-title {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-heading, 'FS PF BeauSans Pro');
+    font-size: 40px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: -6%;
+    color: #000000;
+    text-align: left;
+}
+
+.problem-copy-wrap .problem-document {
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-body, 'Sarabun');
+    font-size: 18px;
+    font-weight: 400;
+    line-height: normal;
+    color: #000000;
+    text-align: left;
+    width: 490px;
+    height: 126px;
+    margin-top: 22px;
 }
 
 .problem-layout {
     grid-template-columns: .9fr 1.1fr;
-    max-width: 1140px;
+    max-width: 1202px;
     margin: 0 auto;
     padding-left: 10px;
     padding-right: 10px;
+    width: 1190px;
 }
 
 
 .problem-visual {
-    width: 440px;
-    height: 440px;
+    width: 656px;
+    height: 624px;
+    max-width: 100%;
     position: relative;
     justify-self: end;
-    flex: 1;
-    max-width: 600px;
+    flex-shrink: 0;
 }
 
-.orbit {
+.orbit-wrap {
     position: absolute;
-    inset: 12px;
-    border: 3px solid var(--red);
-    border-radius: 50%
+    inset: 0;
+    pointer-events: none;
 }
 
-.orbit:before,
-.orbit:after {
-    content: "";
-    width: 12px;
-    height: 12px;
+.orbit-ring {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: contain;
+}
+
+.orbit-dot {
     position: absolute;
-    background: var(--red);
-    border: 3px solid #fff;
-    border-radius: 50%
+    display: block;
+    pointer-events: none;
+    z-index: 2;
 }
 
-.orbit:nth-of-type(1) {
-    top: 4px;
-    left: 4px;
-    width: calc(100% - 8px);
-    height: calc(100% - 8px);
-    border-width: 2px;
-    opacity: 0.7;
-    animation: orbit-spin 20s linear infinite;
+/* Ellipse 5 (37x37px): bên trái vòng tròn (9h) */
+.orbit-dot.dot-left {
+    width: 37px;
+    height: 37px;
+    left: -1px;
+    top: calc(50% - 25px);
 }
 
-.orbit:nth-of-type(2) {
-    top: 40px;
-    left: 40px;
-    width: calc(100% - 80px);
-    height: calc(100% - 80px);
-    border-width: 1px;
-    opacity: 0.4;
-    animation: orbit-spin 15s linear infinite reverse;
+/* Ellipse 7 (20x20px): trên đỉnh vòng tròn (12h) */
+.orbit-dot.dot-top {
+    width: 25px;
+    height: 25px;
+    top: -10px;
+    left: 54%;
 }
 
-@keyframes orbit-spin {
-    from {
-        transform: rotate(0deg);
-    }
-
-    to {
-        transform: rotate(360deg);
-    }
+/* Ellipse 8 (26x26px): dưới bên phải vòng tròn (4h-5h) */
+.orbit-dot.dot-right {
+    width: 20px;
+    height: 20px;
+    right: 30px;
+    bottom: 30%;
 }
 
-.orbit:nth-of-type(1):before {
-    top: -8px;
-    left: 53%
-}
-
-.orbit:nth-of-type(1):after {
-    right: -8px;
-    bottom: 28%
+/* Ellipse 6 (25x25px): đáy vòng tròn (6h) */
+.orbit-dot.dot-bottom {
+    width: 25px;
+    height: 25px;
+    bottom: -12.5px;
+    left: calc(50% - 12.5px);
 }
 
 .problem-photo {
-    width: 350px;
-    height: 350px;
+    width: 508px;
+    height: 508px;
     position: absolute;
-    top: 42px;
-    left: 43px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    object-fit: cover
+    object-fit: cover;
+    box-shadow: inset 0px 4px 8px 0px rgba(249, 23, 23, 0.25);
 }
 
 .stat {
-    width: 91px;
-    height: 91px;
-    padding: 9px;
     position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 9px rgba(0, 0, 0, .2);
-    text-align: center
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    text-align: center;
+    z-index: 3;
 }
 
-.stat img,
-.stat>b {
-    width: 28px;
-    height: 28px;
-    margin-bottom: 4px;
-    border-radius: 50%;
-    background: var(--red);
-    color: #fff;
-    flex-shrink: 0;
+.stat-icon {
+    width: 100%;
+    height: 71px;
+    background: #F31414;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
 }
 
-.stat img {
-    padding: 5px;
+.stat-icon img {
+    width: 58.54px;
+    height: 58.54px;
     object-fit: contain;
-    box-sizing: border-box;
+    display: block;
 }
 
-.stat>b {
-    display: grid;
-    place-items: center;
+.stat-text {
+    padding: 6px 10px 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.stat strong {
-    font-size: 16px;
-    line-height: 1.05
+.stat-text strong {
+    font-family: var(--font-heading, 'FS PF BeauSans Pro', sans-serif);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #171717;
 }
 
-.stat span {
-    font-size: 10px
+.stat-text span {
+    font-family: var(--font-body, 'Sarabun', sans-serif);
+    font-size: 11px;
+    color: #565656;
+    margin-top: 2px;
+    white-space: nowrap;
 }
 
+/* Vị trí 4 thẻ thống kê quanh vòng tròn theo đúng thiết kế Figma */
 .stat-fire {
-    position: absolute;
+    top: -10px;
+    left: 80px;
     width: 132px;
     height: 132px;
-    left: 0;
-    top: 0;
-}
-
-.stat-fire img {
-    width: 36px;
-    height: 36px;
-    padding: 6px;
-    margin-bottom: 6px;
-}
-
-.stat-fire strong {
-    font-size: 20px;
-}
-
-.stat-fire span {
-    font-size: 12px;
 }
 
 .stat-damage {
-    top: 93px;
-    right: -3px
+    top: 140px;
+    right: -15px;
+    width: 132px;
+    height: 132px;
 }
 
 .stat-injury {
-    bottom: 0;
-    left: 25px
+    bottom: 50px;
+    left: 30px;
+    width: 132px;
+    height: 132px;
 }
 
 .stat-death {
-    right: 64px;
-    bottom: -9px
+    bottom: 15px;
+    right: 70px;
+    width: 132px;
+    height: 132px;
 }
 
 .solution-intro {
-    padding-top: 90px
+    padding: 115px 0 125px
 }
 
 .solution-layout {
@@ -571,8 +676,12 @@ a {
     background: var(--red)
 }
 
+.section-copy {
+    max-width: 487px;
+}
+
 .pricing {
-    padding: 62px 0 72px;
+    padding: 78px 0 92px;
     position: relative;
     overflow: hidden
 }
@@ -711,6 +820,23 @@ a {
     font-size: 17px
 }
 
+.price-benefits b img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.price-benefits .price-logo {
+    border: 0;
+    background: transparent;
+}
+
+.price-benefits .price-logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
 .price-card .button {
     align-self: flex-start;
     margin-top: auto;
@@ -750,7 +876,7 @@ a {
 }
 
 .features {
-    padding: 72px 0 70px;
+    padding: 105px 0 115px;
 }
 
 .features .container {
@@ -758,7 +884,7 @@ a {
 }
 
 .features .section-heading {
-    margin-bottom: 25px;
+    margin-bottom: 38px;
 }
 
 .features .section-heading h2 {
@@ -929,7 +1055,7 @@ a {
 }
 
 .commitment {
-    padding-top: 55px
+    padding: 95px 0 120px
 }
 
 .video-cover {
@@ -994,7 +1120,7 @@ a {
 }
 
 .advantages {
-    padding: 38px 0 48px;
+    padding: 55px 0 68px;
     position: relative
 }
 
@@ -1011,7 +1137,7 @@ a {
 }
 
 .advantages article {
-    min-height: 150px;
+    min-height: 168px;
     padding: 22px;
     color: #222;
     background: #fff;
@@ -1043,7 +1169,7 @@ a {
 }
 
 .faq {
-    padding-bottom: 75px
+    padding: 115px 0 95px
 }
 
 .faq-layout {
@@ -1065,7 +1191,7 @@ a {
     gap: 15px;
     border: 0;
     background: none;
-    font: 600 12px/1.4 Inter;
+    font: 600 12px/1.4 var(--font-body);
     text-align: left;
     cursor: pointer
 }
@@ -1117,7 +1243,7 @@ a {
 }
 
 .contact {
-    padding-top: 55px
+    padding: 90px 0 110px
 }
 
 .contact-layout {
@@ -1174,7 +1300,7 @@ a {
     padding: 10px 13px;
     border: 1px solid #ccc;
     border-radius: 0;
-    font: 11px Inter;
+    font: 11px var(--font-body);
     resize: vertical
 }
 
@@ -1201,7 +1327,7 @@ a {
 }
 
 .site-footer {
-    padding: 25px 0;
+    padding: 42px 0;
     border-top: 1px solid var(--red)
 }
 
@@ -1336,6 +1462,7 @@ a {
     }
 
     .site-header {
+        height: 64px;
         position: fixed;
         background: #fff;
         box-shadow: 0 2px 10px rgba(0, 0, 0, .08)
@@ -1345,8 +1472,14 @@ a {
         gap: 12px
     }
 
+    .brand {
+        width: 92px;
+        height: 42px;
+        flex-basis: 92px;
+    }
+
     .brand img {
-        width: 93px
+        width: 247px
     }
 
     .nav-toggle {
@@ -1419,9 +1552,15 @@ a {
         padding-top: 115px
     }
 
-    .hero h1 {
+    #hero-title,
+    #hero-title .line-1,
+    #hero-title .line-2 {
         text-align: left;
         font-size: 36px
+    }
+
+    #hero-title .line-2 {
+        margin-left: 0
     }
 
     .hero-copy p {

@@ -9,7 +9,7 @@
   <title>Internet Báo cháy Viettel</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
@@ -39,12 +39,15 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-inner">
         <div class="hero-copy">
-          <h1 id="hero-title">Một kết nối<br><span>“Hai giá trị”</span></h1>
+          <h1 id="hero-title">
+            <span class="line-1">MỘT KẾT NỐI</span>
+            <span class="line-2">“ HAI GIÁ TRỊ “</span>
+          </h1>
           <p>Internet không chỉ nhanh - mà còn<br>thông minh &amp; an toàn</p>
+          <img class="hero-dots" src="assets/viettel/hero-dots.svg" alt="Chuyển slide">
         </div>
         <div class="hero-device" aria-hidden="true">
           <img src="assets/viettel/smoke-detector.png" alt="">
-          <img class="hero-dots" src="assets/viettel/hero-dots.svg" alt="">
         </div>
       </div>
     </section>
@@ -53,33 +56,73 @@
     <section class="section problem" id="van-de" aria-labelledby="problem-title">
       <div class="container two-columns problem-layout">
         <div class="section-copy">
-          <p class="eyebrow">Vấn đề</p>
-          <h2 id="problem-title">Chủ động phòng chống cháy nổ bảo vệ tính mạng và tài sản gia đình bạn</h2>
-          <p>Nguy cơ cháy nổ trong gia đình, văn phòng, nhà trọ &amp; các cơ sở sản xuất kinh doanh. Việc cần có giải
-            pháp để cảnh báo kịp thời ngay khi có khói/cháy sẽ làm giảm nguy cơ cháy nổ, giảm thiểu thiệt hại về con
-            người, tài sản.</p>
-          <a class="button button-icon" href="#giai-phap">Xem giải pháp
-            <span aria-hidden="true" class="button-icon-svg">
-              <img src="assets/viettel/find.png" alt="Tìm hiểu">
-            </span>
-          </a>
+          <div class="problem-copy-wrap">
+            <p class="eyebrow">Vấn đề</p>
+            <h2 id="problem-title">Chủ động phòng chống cháy nổ tính mạng và tài sản gia đình bạn</h2>
+            <p class="problem-document">Nguy cơ cháy nổ trong gia đình, văn phòng, nhà trọ &amp; các cơ sở sản xuất kinh
+              doanh. Việc cần có giải
+              pháp để cảnh báo kịp thời ngay khi có khói/cháy sẽ làm giảm nguy cơ cháy nổ, giảm thiểu thiệt hại về con
+              người, tài sản.</p>
+          </div>
+          <div class="problem-button">
+            <a class="button button-icon" href="#giai-phap">Xem giải pháp
+              <span aria-hidden="true" class="button-icon-svg">
+                <img src="assets/viettel/find.png" alt="Tìm hiểu">
+              </span>
+            </a>
+          </div>
         </div>
         <div class="problem-visual">
-          <div class="orbit" aria-hidden="true"></div>
-          <div class="orbit" aria-hidden="true"></div>
+          <div class="orbit-wrap" aria-hidden="true">
+            <img class="orbit-ring" src="assets/viettel/icon-van-de/Ellipse 4.svg" alt="">
+            <img class="orbit-dot dot-left" src="assets/viettel/icon-van-de/Ellipse 5.svg" alt="">
+            <img class="orbit-dot dot-top" src="assets/viettel/icon-van-de/Ellipse 7.svg" alt="">
+            <img class="orbit-dot dot-right" src="assets/viettel/icon-van-de/Ellipse 8.svg" alt="">
+            <img class="orbit-dot dot-bottom" src="assets/viettel/icon-van-de/Ellipse 6.svg" alt="">
+          </div>
 
           <img class="problem-photo" src="assets/viettel/problem-fire.png"
             alt="Thiết bị cảnh báo khói Viettel đang phát hiện khói">
-          <article class="stat stat-fire"><img src="assets/viettel/fire.png"
-              alt="Biểu tượng đám cháy"><strong>4.112</strong><span>Vụ
-              cháy nổ</span></article>
-          <article class="stat stat-damage"><b aria-hidden="true">$</b><strong>657.5 Tỷ</strong><span>Thiệt hại</span>
+
+          <article class="stat stat-fire">
+            <div class="stat-icon">
+              <img src="assets/viettel/fire.png" alt="Biểu tượng đám cháy">
+            </div>
+            <div class="stat-text">
+              <strong>4.112</strong>
+              <span>Vụ cháy nổ</span>
+            </div>
           </article>
-          <article class="stat stat-injury"><img src="assets/viettel/injury-icon.svg"
-              alt=""><strong>+89</strong><span>Bị
-              thương</span></article>
-          <article class="stat stat-death"><img src="assets/viettel/death-icon.svg"
-              alt=""><strong>+100</strong><span>Người chết</span></article>
+
+          <article class="stat stat-damage">
+            <div class="stat-icon">
+              <img src="assets/viettel/Vector.png" alt="Thiệt hại tài sản">
+            </div>
+            <div class="stat-text">
+              <strong>657.5 Tỷ</strong>
+              <span>Thiệt hại</span>
+            </div>
+          </article>
+
+          <article class="stat stat-injury">
+            <div class="stat-icon">
+              <img src="assets/viettel/injury-icon.svg" alt="Số người bị thương">
+            </div>
+            <div class="stat-text">
+              <strong>+89</strong>
+              <span>Bị thương</span>
+            </div>
+          </article>
+
+          <article class="stat stat-death">
+            <div class="stat-icon">
+              <img src="assets/viettel/death-icon.svg" alt="Số người chết">
+            </div>
+            <div class="stat-text">
+              <strong>+100</strong>
+              <span>Người chết</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -162,10 +205,12 @@
               </div>
             </dl>
             <div class="price-benefits">
-              <p><b>♙</b>Mỗi khách hàng tặng một bảo hiểm cháy nổ với số tiền bảo hiếm lên tới 200 triệu đồng trong suốt
+              <p><b><img src="assets/viettel/icon-cac-giai-phap-toan-dien/Mask group (1).svg" alt=""></b>Mỗi khách hàng
+                tặng một bảo hiểm cháy nổ với số tiền bảo hiểm lên tới 200 triệu đồng trong suốt
                 quá trình sử dụng dịch vụ của Viettel.</p>
               <p><b>⚒</b>Được bảo trì miễn phí thiết bị cảm biến 1 lần/năm trong suốt thời gian sử dụng dịch vụ</p>
-              <p><b>V</b>Được cấp tài khoản miễn phí quản lý thiết bị cảm biến, cấu hình và lựa chọn số điện thoại nhận
+              <p><b class="price-logo"><img src="assets/viettel/icon-cam-ket/image 15.svg" alt=""></b>Được cấp tài khoản
+                miễn phí quản lý thiết bị cảm biến, cấu hình và lựa chọn số điện thoại nhận
                 cảnh báo từ xa qua ứng dụng của Viettel.</p>
             </div>
             <a class="button" href="#dang-ky">Liên hệ ngay: 18008119</a>
@@ -193,10 +238,12 @@
               </div>
             </dl>
             <div class="price-benefits">
-              <p><b>♙</b>Mỗi khách hàng tặng một bảo hiểm cháy nổ với số tiền bảo hiếm lên tới 200 triệu đồng trong suốt
+              <p><b><img src="assets/viettel/icon-cac-giai-phap-toan-dien/Mask group (1).svg" alt=""></b>Mỗi khách hàng
+                tặng một bảo hiểm cháy nổ với số tiền bảo hiểm lên tới 200 triệu đồng trong suốt
                 quá trình sử dụng dịch vụ của Viettel.</p>
               <p><b>⚒</b>Được bảo trì miễn phí thiết bị cảm biến 1 lần/năm trong suốt thời gian sử dụng dịch vụ</p>
-              <p><b>V</b>Được cấp tài khoản miễn phí quản lý thiết bị cảm biến, cấu hình và lựa chọn số điện thoại nhận
+              <p><b class="price-logo"><img src="assets/viettel/icon-cam-ket/image 15.svg" alt=""></b>Được cấp tài khoản
+                miễn phí quản lý thiết bị cảm biến, cấu hình và lựa chọn số điện thoại nhận
                 cảnh báo từ xa qua ứng dụng của Viettel.</p>
             </div>
             <a class="text-link" href="#dang-ky">Liên hệ tư vấn</a>
@@ -390,5 +437,6 @@
     </div>
   </footer>
 </body>
+
 
 </html>
